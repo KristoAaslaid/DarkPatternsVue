@@ -3,7 +3,6 @@
 
 <template>
   <main>
-    
   </main>
 </template>
 
