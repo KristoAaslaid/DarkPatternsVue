@@ -2,6 +2,7 @@
 </script>
 
 <template>
+  <input type="button" class="button1" value="Oh the misery">
   <main>
     <div id="image">
     <img src="./assets/box.png">
