@@ -1,9 +1,28 @@
 <script setup>
+
+</script>
+
+
+<script>
+export default{
+  data(){
+    return {
+      cum: false,
+      count: 0,
+    }
+  },
+  methods: {
+    funnistuff(){
+      this.count++;
+    }
+  }
+}
+
 </script>
 
 <template>
 
-<input type="button" class="button1" value="Oh the misery">
+<button class="button1" @click="funnistuff()">{{count}}</button>
   <main>
     
   </main>
