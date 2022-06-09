@@ -29,7 +29,7 @@ export default{
 <button class="settings"></button>
 <div>
 <button class="button1" @click="funnistuff()">{{count}}</button>
-<input class="kasutaja" v-model="kasutajanimi" placeholder="Kasutajanimi">
+<input class="kasutaja" v-model="kasutajanimi" placeholder="Kasutajanimi" maxlength="14">
 <button class="enterkasutaja" @click="kasutajabaasi()">Enter</button>
 </div>
   <main>
