@@ -12,6 +12,7 @@ export default{
       kasutajanimi: "",
       settingsmenu: false,
       startgame: false,
+      gamestarted: false,
     }
   },
   methods: {
@@ -20,10 +21,13 @@ export default{
     },
     kasutajabaasi(){
       this.startgame = !this.startgame;
+      this.gamestarted = !this.gamestarted;
     },
     settingsfunc(){
       this.settingsmenu = !this.settingsmenu;
+      if (this.gamestarted == true){
       this.startgame = !this.startgame;
+      }
     }
   }
 }
