@@ -9,12 +9,16 @@ export default{
     return {
       cum: false,
       count: 0,
+      kasutajanimi: "",
     }
   },
   methods: {
     funnistuff(){
       this.count++;
-    }
+    },
+    kasutajabaasi(){
+
+    },
   }
 }
 
@@ -22,8 +26,11 @@ export default{
 </script>
 
 <template>
-
+<div>
 <button class="button1" @click="funnistuff()">{{count}}</button>
+<input class="kasutaja" v-model="kasutajanimi" placeholder="Kasutajanimi">
+<button class="enterkasutaja" @click="kasutajabaasi()">Enter</button>
+</div>
   <main>
     
   </main>
@@ -64,4 +71,41 @@ html {
   position: absolute;
 }
 
+.kasutaja {
+  display: flex;
+  background-color: #a14337;
+  border-color: yellow;
+  border-radius: 9px;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  padding: 0.2rem;
+  width: 10vw;
+  height: 5vh;
+  font-size: 1.5vw;
+  cursor: pointer;
+  top:40%;
+  left: 40%;
+  position: absolute;
+}
+
+.enterkasutaja {
+  display: flex;
+  background-color: #a14337;
+  border-color: yellow;
+  border-radius: 9px;
+  color: rgb(0, 255, 76);
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  padding: 0.2rem;
+  width: 10vw;
+  height: 4vh;
+  font-size: 1.5vw;
+  cursor: pointer;
+  top:40%;
+  left: 52%;
+  position: absolute;
+}
 </style>
