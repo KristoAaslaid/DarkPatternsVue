@@ -111,14 +111,18 @@ html {
 }
 
 .settings{
-  background: url("././static/settings.jpg") no-repeat center center cover;
+  background-image: url("././static/settings.png");
+  background-position: 0% 0%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: transparent;
+  border-color: rgba(0, 0, 0, 0);
   display: flex;
-  padding: 0.2rem;
-  width: 100vw;
-  height: 400vh;
+  width: 3vw;
+  height: 3vw;
   cursor: pointer;
-  top:30%;
-  left: 22%;
+  top:1%;
+  left: 1%;
   position: absolute;
 }
 </style>
