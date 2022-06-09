@@ -11,8 +11,10 @@ export default{
       count: 0,
       kasutajanimi: "",
       settingsmenu: false,
-      startgame: false,
+      story: false,
       gamestarted: false,
+      gamecounter: 0,
+      question: false,
     }
   },
   methods: {
@@ -20,14 +22,23 @@ export default{
       this.count++;
     },
     kasutajabaasi(){
-      this.startgame = !this.startgame;
+      this.story = !this.story;
       this.gamestarted = !this.gamestarted;
+      this.gamecounter++;
     },
     settingsfunc(){
       this.settingsmenu = !this.settingsmenu;
-      if (this.gamestarted == true){
-      this.startgame = !this.startgame;
+      if (this.gamecounter == 1){
+      this.story = !this.story;
       }
+      if (this.gamecounter == 2){
+      this.question = !this.question;
+      }
+    },
+    next(){
+      this.gamecounter++;
+      this.story = false;
+      this.question = true;
     }
   }
 }
@@ -44,16 +55,22 @@ export default{
   </div>
 </div>
 
-<div v-if="settingsmenu != true && startgame != true">
+<div class="Openingscreen" v-if="settingsmenu != true && gamestarted != true">
   <button name="avaleht" class="button1" @click="funnistuff()">{{count}}</button>
   <input class="kasutaja" v-model="kasutajanimi" placeholder="Kasutajanimi" maxlength="14">
   <button class="enterkasutaja" @click="kasutajabaasi()">Alusta mängu</button>
 </div>
 
-<div class="story" v-if="startgame == true">
+<div class="story" v-if="story == true">
   <div class="localisation">
   <p>Nüüd see on gaming, POG</p>
+  <button class="edasi" @click="next()">Järgmine küsimus or smth</button>
   </div>
+</div>
+
+<div class="question 1" v-if="gamecounter == 2 && question == true">
+  <button name="esimene valik" class="button1game" @click="funnistuff()">{{count}}</button>
+  <button name="teine valik" class="button2game" @click="funnistuff()">{{count}}</button>
 </div>
 
   <main>
@@ -185,6 +202,61 @@ html {
   position: absolute;
   top: 72%;
   left: 50%;
+}
+
+.edasi{
+  display: flex;
+  background-color: #a14337;
+  border-color: yellow;
+  border-radius: 9px;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  padding: 0.2rem;
+  width: 10vw;
+  height: 10vh;
+  font-size: 1.5vw;
+  cursor: pointer;
+  position: absolute;
+}
+
+.button1game {
+  display: flex;
+  background-color: #a14337;
+  border-color: yellow;
+  border-radius: 9px;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  padding: 0.2rem;
+  width: 10vw;
+  height: 5vh;
+  font-size: 1.5vw;
+  cursor: pointer;
+  top:50%;
+  left: 50%;
+  position: absolute;
+}
+
+.button2game {
+  display: flex;
+  background-color: #a14337;
+  border-color: yellow;
+  border-radius: 9px;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  padding: 0.2rem;
+  width: 10vw;
+  height: 5vh;
+  font-size: 1.5vw;
+  cursor: pointer;
+  top:50%;
+  left: 60%;
+  position: absolute;
 }
 
 /* .switch vaja lisada, praegu lihtsalt checkbox, send help!!!!! */
