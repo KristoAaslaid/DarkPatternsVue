@@ -24,4 +24,23 @@ html {
   background-size: cover;
   overflow: hidden;
 }
+
+.button1 {
+  display: flex;
+  background-color: #a14337;
+  border-color: yellow;
+  border-radius: 9px;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  padding: 0.2rem;
+  width: 10vw;
+  height: 5vh;
+  font-size: 1.5vw;
+  cursor: pointer;
+  top:50%;
+  left: 50%;
+  position: absolute;
+}
 </style>
