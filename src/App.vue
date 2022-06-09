@@ -10,6 +10,8 @@ export default{
       cum: false,
       count: 0,
       kasutajanimi: "",
+      settingsmenu: false,
+      startgame: false,
     }
   },
   methods: {
@@ -17,8 +19,12 @@ export default{
       this.count++;
     },
     kasutajabaasi(){
-
+      this.startgame = !this.startgame;
     },
+    settingsfunc(){
+      this.settingsmenu = !this.settingsmenu;
+      this.startgame = !this.startgame;
+    }
   }
 }
 
@@ -26,12 +32,26 @@ export default{
 </script>
 
 <template>
-<button class="settings"></button>
-<div>
-<button class="button1" @click="funnistuff()">{{count}}</button>
-<input class="kasutaja" v-model="kasutajanimi" placeholder="Kasutajanimi" maxlength="14">
-<button class="enterkasutaja" @click="kasutajabaasi()">Enter</button>
+<button class="settings" @click="settingsfunc"></button>
+<div class="settingsmenu" v-if="settingsmenu">
+  <button name="settingsfunni" class="buttonfunnisetting" @click="funnistuff()">Language</button>
+  <div class="switch">
+  <input class="slider" type="checkbox" name="Sound" id="Sound">
+  </div>
 </div>
+
+<div v-if="settingsmenu != true && startgame != true">
+  <button name="avaleht" class="button1" @click="funnistuff()">{{count}}</button>
+  <input class="kasutaja" v-model="kasutajanimi" placeholder="Kasutajanimi" maxlength="14">
+  <button class="enterkasutaja" @click="kasutajabaasi()">Alusta mängu</button>
+</div>
+
+<div class="story" v-if="startgame == true">
+  <div class="localisation">
+  <p>Nüüd see on gaming, POG</p>
+  </div>
+</div>
+
   <main>
     
   </main>
@@ -48,7 +68,7 @@ export default{
 }
 
 html {
-  background: url("././assets/FirstPageD.png") no-repeat center center fixed;
+  background-color: rgba(4, 22, 99, 0.87);
   background-size: cover;
   overflow: hidden;
 }
@@ -125,4 +145,43 @@ html {
   left: 0%;
   position: absolute;
 }
+
+.buttonfunnisetting {
+  display: flex;
+  background-color: #a14337;
+  border-color: yellow;
+  border-radius: 9px;
+  color: rgb(0, 255, 76);
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  padding: 0.2rem;
+  width: 10vw;
+  height: 4vh;
+  font-size: 1.5vw;
+  cursor: pointer;
+  top:10%;
+  left: 5%;
+  position: absolute;
+}
+
+.slider{
+  position: absolute;
+  cursor: pointer;
+  top: 12%;
+  left: 25%;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.localisation{
+  position: absolute;
+  top: 72%;
+  left: 50%;
+}
+
+/* .switch vaja lisada, praegu lihtsalt checkbox, send help!!!!! */
 </style>
