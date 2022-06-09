@@ -26,6 +26,7 @@ export default{
 </script>
 
 <template>
+<button class="settings"></button>
 <div>
 <button class="button1" @click="funnistuff()">{{count}}</button>
 <input class="kasutaja" v-model="kasutajanimi" placeholder="Kasutajanimi">
@@ -106,6 +107,18 @@ html {
   cursor: pointer;
   top:40%;
   left: 52%;
+  position: absolute;
+}
+
+.settings{
+  background: url("././static/settings.jpg") no-repeat center center cover;
+  display: flex;
+  padding: 0.2rem;
+  width: 100vw;
+  height: 400vh;
+  cursor: pointer;
+  top:30%;
+  left: 22%;
   position: absolute;
 }
 </style>
