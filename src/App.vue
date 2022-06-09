@@ -48,7 +48,7 @@ export default{
 }
 
 html {
-  background: url("././assets/FirstPageD.png") no-repeat center center fixed;
+  background-color: rgba(4, 22, 99, 0.87);
   background-size: cover;
   overflow: hidden;
 }
