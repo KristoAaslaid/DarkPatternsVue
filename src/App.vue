@@ -3,6 +3,9 @@
 
 <template>
   <main>
+    <div id="image">
+    <img src="./assets/box.png">
+    </div>
   </main>
 </template>
 
@@ -17,7 +20,7 @@
 }
 
 html {
-  background: url("././assets/FirstPageD.png") no-repeat center center fixed;
+  background: url("./assets/FirstPageD.png") no-repeat center center fixed;
   background-size: cover;
   overflow: hidden;
 }
