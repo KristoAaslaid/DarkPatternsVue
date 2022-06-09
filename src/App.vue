@@ -2,9 +2,7 @@
 </script>
 
 <template>
-<<<<<<< Updated upstream
   <input type="button" class="button1" value="Oh the misery">
-=======
 <button class="settings" @click="settingsfunc"></button>
 <div class="settingsmenu" v-if="settingsmenu">
   <button name="settingsfunni" class="buttonfunnisetting" @click="funnistuff()">Language</button>
@@ -28,11 +26,7 @@
     <img src="./static/textbubble.png" class="mainmenutextbubble">
     <img src="./static/interactivescreensmall.png" class="mainmenuusernameplay">
 
->>>>>>> Stashed changes
   <main>
-    <div id="image">
-    <img src="./assets/box.png">
-    </div>
   </main>
 </template>
 
@@ -71,9 +65,6 @@ html {
   left: 90%;
   position: absolute;
 }
-<<<<<<< Updated upstream
-</style>
-=======
 
 .kasutaja {
   display: flex;
@@ -188,4 +179,3 @@ html {
 
 /* .switch vaja lisada, praegu lihtsalt checkbox, send help!!!!! */
 </style>
->>>>>>> Stashed changes
