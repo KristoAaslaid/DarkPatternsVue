@@ -121,8 +121,8 @@ html {
   width: 3vw;
   height: 3vw;
   cursor: pointer;
-  top:1%;
-  left: 1%;
+  top: 0%;
+  left: 0%;
   position: absolute;
 }
 </style>
